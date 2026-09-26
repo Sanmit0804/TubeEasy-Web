@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  tubeeasy-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tubeeasy-web
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_SITE_URL=https://tubeeasy.com
+      - NEXT_PUBLIC_ADSENSE_PUB_ID=ca-pub-0000000000000000
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/analyze"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
