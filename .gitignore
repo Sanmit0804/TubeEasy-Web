@@ -43,3 +43,5 @@ next-env.d.ts
 # Temporary download chunks
 *.part
 *.ytdl
+
+README.md
