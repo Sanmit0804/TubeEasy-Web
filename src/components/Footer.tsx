@@ -1,5 +1,5 @@
-﻿import Link from "next/link";
-import { Play } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/config/site";
 
 export function Footer() {
@@ -11,9 +11,15 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Brand Col */}
           <div className="space-y-3 md:col-span-2">
-            <Link href="/" className="inline-flex items-center gap-2">
-              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#E11D48] text-white">
-                <Play className="h-3.5 w-3.5 fill-white translate-x-0.5" />
+            <Link href="/" className="inline-flex items-center gap-2.5">
+              <div className="relative h-8 w-8 overflow-hidden rounded-xl border border-[#20242E] bg-[#12151C]">
+                <Image
+                  src="/logo.png"
+                  alt="TubeEasy Logo"
+                  width={32}
+                  height={32}
+                  className="h-full w-full object-cover"
+                />
               </div>
               <span className="text-lg font-bold tracking-tight text-white">TubeEasy</span>
             </Link>

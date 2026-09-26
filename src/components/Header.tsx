@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Play } from "lucide-react";
+import Image from "next/image";
 import { siteConfig } from "@/config/site";
 
 export function Header() {
@@ -8,8 +8,15 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 transition-opacity hover:opacity-90">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#E11D48] text-white shadow-sm shadow-[#E11D48]/30">
-            <Play className="h-4 w-4 fill-white translate-x-0.5" />
+          <div className="relative h-9 w-9 overflow-hidden rounded-xl border border-[#20242E] bg-[#12151C] shadow-sm shadow-[#E11D48]/20">
+            <Image
+              src="/logo.png"
+              alt="TubeEasy Logo"
+              width={36}
+              height={36}
+              className="h-full w-full object-cover"
+              priority
+            />
           </div>
           <div className="flex items-baseline gap-1">
             <span className="text-xl font-bold tracking-tight text-white">TubeEasy</span>
